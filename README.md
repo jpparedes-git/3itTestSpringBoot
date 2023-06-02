@@ -9,7 +9,3 @@ This project was generated with [SpringBoot](https://spring.io/projects/spring-b
 
 For run development server, open project on Visual Studio, generate a Java launch.json from Run and Debug menu on Visual Studio Code IDE, or run file `src/main/java/com/example/h2test/H2testApplication.java`.
 Make sure u clone and run frontend project [3itTestAngular](https://github.com/jpparedes-git/3itTestAngular) for interact with server.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
