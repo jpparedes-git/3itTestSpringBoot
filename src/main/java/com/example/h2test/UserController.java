@@ -38,7 +38,7 @@ public class UserController {
     @PostMapping("/usuarios/{id}")
     ResponseEntity<User> addUser(@RequestBody User user, @PathVariable String id) {
         //el usuario viene sin id desde el submit front
-        System.out.println(id);
+        //el id del path es el id de music seleccionado
         if(userService.findByEmail(user.getEmail()) != null){
             return new ResponseEntity<User>(user, HttpStatus.OK);
         }
