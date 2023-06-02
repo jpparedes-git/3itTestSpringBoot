@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,16 +18,26 @@ public class H2testApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(UserRepository userRepository,
-		MusicRepository musicRepository
+	public CommandLineRunner demo(MusicService musicService
 	) {
 	  return (args) -> {
-		// save a few customers
-		userRepository.save(new User("aa@gmail.com"));
-		userRepository.save(new User("bb@gmail.com"));
+		/*
+		User aa = new User("aa@gmail.com");
+		ResponseForm responseForm = new ResponseForm(aa);
+		aa.setResponse(responseForm);
+		userRepository.save(aa);
+		responseForm.setUserId(aa.getId());
+		responseFormRepository.save(responseForm);
+		 */
 
-		musicRepository.save(new Music("K'POP"));
-		musicRepository.save(new Music("RAP"));
+		Music musicKpop = new Music("K-POP");
+		musicService.insertMusic(musicKpop);
+		Music musicRap = new Music("RAP");
+		musicService.insertMusic(musicRap);
+		Music musicRock = new Music("ROCK");
+		musicService.insertMusic(musicRock);
+		Music musicJazz = new Music("JAZZ");
+		musicService.insertMusic(musicJazz);
 	  };
 	}
 
